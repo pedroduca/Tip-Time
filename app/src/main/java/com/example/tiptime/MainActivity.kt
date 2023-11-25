@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateTip() {
 
-        val stringInTextField = binding.costOfService.text.toString()
+        val stringInTextField = binding.costOfServiceEditText.text.toString()
         val cost = stringInTextField.toDoubleOrNull()
         if (cost == null || cost == 0.0) {
             displayTip(0.0)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayTip(tip: Double){
-        val formattedTip = NumberFormat.getCurrencyInstance().format(0.0)
+        val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
 
